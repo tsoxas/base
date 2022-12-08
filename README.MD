@@ -15,7 +15,7 @@ I provide an example of all the features the bot supports. You can view them by 
 - **GUILD_ID**: The id of the bot's main discord server (_Not required if **GLOBAL** is set to FALSE_)
 - **GLOBAL**: Whether the slash commands are registered as global commands or guild commands (_If set to FALSE the commands will be registered to the guild that is set in the **GUILD_ID** setting_)
 
-## Featues
+## Features
 
 - Permission System based on role permissions (_eg. Manage Messages, Administrator etc._)
 - Cooldown System
