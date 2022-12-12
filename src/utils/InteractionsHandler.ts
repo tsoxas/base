@@ -53,14 +53,12 @@ export async function canUserExecuteCommand(command: Command | Button | Select_M
             }
         } else {
             let invalidPerms = []
-            for (const perm of command.permissions) {
-                if (!client.validPermissions.includes(perm)) {
-                    throw new Error(`Invalid Permissions ${perm}`);
+                if (!client.validPermissions.includes(command.permissions)) {
+                    throw new Error(`Invalid Permissions ${command.permissions}`);
                 }
-                if (!member.permissions.has(perm as PermissionResolvable)) {
-                    invalidPerms.push(perm);
+                if (!member.permissions.has(command.permissions as PermissionResolvable)) {
+                    invalidPerms.push(command.permissions);
                 }
-            }
             if (invalidPerms.length > 0) {
                 return { allowed: false, embed: NoPerms('Insufficient perms', `${invalidPerms.join(", ")}`) };
             } else {
